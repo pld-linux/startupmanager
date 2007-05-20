@@ -1,16 +1,16 @@
 #
 Summary:	StartUp Manager - a gui tool for changing settings in the bootloader and splash screen.
-Summary(pl.UTF-8):	-
+Summary(pl.UTF-8):	StartUp Manager - interfejs graficzny dla bootloadera i splashscreen.
 Name:		startupmanager
 Version:	1.0.4
-Release:	0.1
+Release:	0.3
 License:	GPL v.2
 Group:		Applications
 Source0:	http://web.telia.com/~u88005282/sum/archive/source/%{name}_%{version}-1.tar.gz
 # Source0-md5:	7447b92ff541400a7959b0d2600cd3a6
 Patch0:		%{name}-encoding.patch
 URL:		http://web.telia.com/~u88005282/sum/
-Requires:	python
+%pyrequires_eq	python-libs
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -19,6 +19,8 @@ StartUp Manager, or SUM, is a gui tool for changing settings
 in the bootloader and splash screen.
 
 %description -l pl.UTF-8
+StartUp Manager, lub SUM, jest interfejsem graficznym dla 
+bootloadera i splashscreen-a.
 
 %prep
 %setup -q
