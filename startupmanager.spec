@@ -3,7 +3,7 @@ Summary:	StartUp Manager - GUI tool for changing settings in the bootloader and 
 Summary(pl.UTF-8):	StartUp Manager - interfejs graficzny dla bootloadera i ekranu startowego
 Name:		startupmanager
 Version:	1.0.4
-Release:	0.3
+Release:	1
 License:	GPL v.2
 Group:		Applications
 Source0:	http://web.telia.com/~u88005282/sum/archive/source/%{name}_%{version}-1.tar.gz
