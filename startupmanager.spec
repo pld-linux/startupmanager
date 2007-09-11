@@ -2,14 +2,14 @@
 Summary:	StartUp Manager - GUI tool for changing settings in the bootloader and splash screen
 Summary(pl.UTF-8):	StartUp Manager - interfejs graficzny dla bootloadera i ekranu startowego
 Name:		startupmanager
-Version:	1.0.4
+Version:	1.9.0
 Release:	1
 License:	GPL v.2
 Group:		Applications
-Source0:	http://web.telia.com/~u88005282/sum/archive/source/%{name}_%{version}-1.tar.gz
-# Source0-md5:	7447b92ff541400a7959b0d2600cd3a6
-Patch0:		%{name}-encoding.patch
+Source0:	http://web.telia.com/~u88005282/sum/archive/source/%{name}-%{version}.tar.gz
+# Source0-md5:	ee2e0e51094e0c65010eb15448a3e268
 URL:		http://web.telia.com/~u88005282/sum/
+BuildRequires:	gnome-doc-utils
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-libs
 BuildArch:	noarch
@@ -24,8 +24,9 @@ StartUp Manager, lub w skrócie SUM, jest interfejsem graficznym dla
 bootloadera i ekranu startowego (splashscreena).
 
 %prep
-%setup -q
-%patch0 -p1
+%setup -q -c
+tar -xz -C ../ -f %{name}_%{version}-1.tar.gz
+rm -f %{name}_%{version}-1.tar.gz
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -35,18 +36,22 @@ export USER=root
 	--root=$RPM_BUILD_ROOT \
 	--prefix=%{_prefix}
 		
-%find_lang %{name}
+%find_lang %{name} --with-gnome
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README 
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/*.desktop
-%dir %{py_sitescriptdir}/Startupmanager
-%{py_sitescriptdir}/Startupmanager/*.py?
-%{py_sitescriptdir}/Startupmanager/*.py
-%{py_sitescriptdir}/Startupmanager/images
-%{py_sitescriptdir}/Startupmanager/*.glade
+%{_desktopdir}/kde/*.desktop
+%dir %{py_sitescriptdir}/bootconfig
+%{py_sitescriptdir}/bootconfig/*.py?
+%{py_sitescriptdir}/bootconfig/*.py
+%{py_sitescriptdir}/*.egg-info
+%dir %{_datadir}/%{name}
+%{_datadir}/%{name}/*.py
+%{_datadir}/%{name}/*.glade
+%{_datadir}/%{name}/*.svg
