@@ -4,7 +4,7 @@ Summary(pl.UTF-8):	StartUp Manager - interfejs graficzny dla bootloadera i ekran
 Name:		startupmanager
 Version:	1.9.0
 Release:	1
-License:	GPL v.2
+License:	GPL v2+
 Group:		Applications
 Source0:	http://web.telia.com/~u88005282/sum/archive/source/%{name}-%{version}.tar.gz
 # Source0-md5:	ee2e0e51094e0c65010eb15448a3e268
