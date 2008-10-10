@@ -2,12 +2,12 @@
 Summary:	StartUp Manager - GUI tool for changing settings in the bootloader and splash screen
 Summary(pl.UTF-8):	StartUp Manager - interfejs graficzny dla bootloadera i ekranu startowego
 Name:		startupmanager
-Version:	1.9.0
-Release:	2
+Version:	1.9.11
+Release:	1
 License:	GPL v2+
 Group:		Applications
-Source0:	http://web.telia.com/~u88005282/sum/archive/source/%{name}-%{version}.tar.gz
-# Source0-md5:	ee2e0e51094e0c65010eb15448a3e268
+Source0:	http://downloads.sourceforge.net/startup-manager/%{name}-%{version}.tar.gz
+# Source0-md5:	b20c8e965b64b5047c33c9a811bca9c3
 URL:		http://web.telia.com/~u88005282/sum/
 BuildRequires:	gnome-doc-utils
 BuildRequires:	rpm-pythonprov
@@ -24,9 +24,7 @@ StartUp Manager, lub w skrócie SUM, jest interfejsem graficznym dla
 bootloadera i ekranu startowego (splashscreena).
 
 %prep
-%setup -q -c
-tar -xz -C ../ -f %{name}_%{version}-1.tar.gz
-rm -f %{name}_%{version}-1.tar.gz
+%setup -q
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -44,7 +42,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README 
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_sbindir}/*
 %{_desktopdir}/*.desktop
 %{_desktopdir}/kde/*.desktop
 %dir %{py_sitescriptdir}/bootconfig
