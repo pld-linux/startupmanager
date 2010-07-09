@@ -3,7 +3,7 @@ Summary:	StartUp Manager - GUI tool for changing settings in the bootloader and 
 Summary(pl.UTF-8):	StartUp Manager - interfejs graficzny dla bootloadera i ekranu startowego
 Name:		startupmanager
 Version:	1.9.11
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Applications
 Source0:	http://downloads.sourceforge.net/startup-manager/%{name}-%{version}.tar.gz
