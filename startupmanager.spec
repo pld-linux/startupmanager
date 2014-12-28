@@ -9,7 +9,7 @@ Group:		Applications
 Source0:	http://downloads.sourceforge.net/startup-manager/%{name}-%{version}.tar.gz
 # Source0-md5:	b20c8e965b64b5047c33c9a811bca9c3
 URL:		http://web.telia.com/~u88005282/sum/
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gnome-doc-utils
 BuildRequires:	intltool
 BuildRequires:	rpm-pythonprov
